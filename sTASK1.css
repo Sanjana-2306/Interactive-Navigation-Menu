@@ -1,0 +1,216 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    padding-top: 70px; /* Offset for fixed navbar */
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.navbar li {
+    margin: 0 25px;
+    position: relative;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    font-size: 20px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #ffeb3b;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Sections */
+.section {
+    padding: 100px 20px;
+    min-height: 100vh;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#home {
+    background-color: #4caf50;
+    font-family: 'Pacifico', cursive;
+    animation: fadeIn 1.5s ease-out;
+}
+
+#about {
+    background-color: #f44336;
+    font-family: 'Playfair Display', serif;
+    animation: slideUp 1.5s ease-out;
+}
+
+#webdesign {
+    background-color: #2196f3;
+    font-family: 'Oswald', sans-serif;
+    animation: bounceIn 1.5s ease-out;
+}
+
+#seo {
+    background-color: #ff9800;
+    font-family: 'Open Sans', sans-serif;
+    animation: rotateIn 1.5s ease-out;
+}
+
+#marketing {
+    background-color: #9c27b0;
+    font-family: 'Pacifico', cursive;
+    animation: flipIn 1.5s ease-out;
+}
+
+#contact {
+    background-color: #009688;
+    font-family: 'Open Sans', sans-serif;
+    animation: zoomIn 1.5s ease-out;
+}
+
+#testimonials {
+    background-color: #ffeb3b;
+    color: #333;
+}
+
+#portfolio {
+    background-color: #673ab7;
+    color: white;
+}
+
+#team {
+    background-color: #03a9f4;
+    color: white;
+}
+
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2c3e50;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+#backToTop:hover {
+    background: #34495e;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes rotateIn {
+    0% { opacity: 0; transform: rotate(-90deg); }
+    100% { opacity: 1; transform: rotate(0deg); }
+}
+
+@keyframes flipIn {
+    0% { opacity: 0; transform: rotateY(-180deg); }
+    100% { opacity: 1; transform: rotateY(0deg); }
+}
+
+@keyframes zoomIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+
+    #backToTop {
+        font-size: 18px;
+    }
+}
